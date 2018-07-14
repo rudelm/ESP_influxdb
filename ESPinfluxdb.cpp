@@ -11,9 +11,24 @@
 #define _DEBUG
 #endif
 
+Influxdb::Influxdb()
+{
+        // empty constructor so that host and port can be initialized later
+}
+
 Influxdb::Influxdb(const char *host, uint16_t port) {
         _port = String(port);
         _host = String(host);
+}
+
+void Influxdb::setHost(const char *host)
+{
+        _host = String(host);
+}
+
+void Influxdb::setPort(uint16_t port)
+{
+        _port = String(port);
 }
 
 DB_RESPONSE Influxdb::opendb(String db, String user, String password) {

@@ -40,7 +40,11 @@ String _tag;
 class Influxdb
 {
 public:
+Influxdb();
 Influxdb(const char* host, uint16_t port);
+
+void setHost(const char* host);
+void setPort(uint16_t port);
 
 DB_RESPONSE opendb(String db);
 DB_RESPONSE opendb(String db, String user, String password);
